@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hydrahs.github.io</id>
     <title>Gridea</title>
-    <updated>2021-02-25T10:08:04.682Z</updated>
+    <updated>2021-02-25T10:12:41.933Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hydrahs.github.io"/>
     <link rel="self" href="https://hydrahs.github.io/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://hydrahs.github.io/post/zhe-shi-wo-de-di-yi-pian-wen-zhang/">
         </link>
         <updated>2021-02-25T07:44:20.000Z</updated>
-        <content type="html"><![CDATA[<p>just test</p>
+        <content type="html"><![CDATA[<p>还是不愿意依托于知乎的栏目进行博客的更新，所以选择这个方式。<br>
+Gridea的本质还是github page，所以能猜都能猜到问题会出现在哪。主要就是访问慢，更新慢的问题。<br>
+当然用了Gridea之后还有一个致命的问题，我目前没有得到好的解决办法:访问的时候会有css样式加载不出来的问题，在第三方的主题上尤为明显。搞得人尤为头大，尽管f&amp;q里面有相关的叙述但并不能很好的解决这个问题，有点玄学。<br>
+但无论如何感觉还是弄出来了，接下来就一点一点完善咯。</p>
 ]]></content>
     </entry>
     <entry>
