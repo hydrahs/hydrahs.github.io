@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hydrahs.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-02-25T10:12:41.933Z</updated>
+    <title>Wintermelon</title>
+    <updated>2021-02-25T10:14:35.797Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hydrahs.github.io"/>
     <link rel="self" href="https://hydrahs.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>干他妈的</subtitle>
     <logo>https://hydrahs.github.io/images/avatar.png</logo>
     <icon>https://hydrahs.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, Wintermelon</rights>
     <entry>
         <title type="html"><![CDATA[这是我的第一篇文章]]></title>
         <id>https://hydrahs.github.io/post/zhe-shi-wo-de-di-yi-pian-wen-zhang/</id>
