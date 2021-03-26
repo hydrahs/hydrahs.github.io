@@ -2,18 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>雅思二三事 | Wintermelon</title>
+<title>matlab中关于概率分布的验证函数 | Wintermelon</title>
 <link rel="shortcut icon" href="https://hydrahs.github.io/favicon.ico?v=1616763083955">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://hydrahs.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="雅思二三事 | Wintermelon - Atom Feed" href="https://hydrahs.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="matlab中关于概率分布的验证函数 | Wintermelon - Atom Feed" href="https://hydrahs.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="我为什么要考雅思
-因为去年忙着CADC的比赛，六级没有好好准备，而再之前的六级考试md不是忘了报名就是忘了缴费。
-" />
+    <meta name="description" content="总体分布的正态性检验
+1.Jarque-Bera检验(JB检验)
+它是利用正态分布的偏度sk和峰度ku，构造一个包含sk，ku且自由度为2的卡方分布统计量。这个检验适合大样本。
+在MATLAB中，JB检验命令jbtest的调用格式为：
+H ..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -76,29 +78,64 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              雅思二三事
+              matlab中关于概率分布的验证函数
             </h2>
             <div class="post-info">
               <span>
-                2021-03-03
+                2021-03-26
               </span>
               <span>
-                1 min read
+                3 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="我为什么要考雅思">我为什么要考雅思</h2>
-<p>因为去年忙着CADC的比赛，六级没有好好准备，而再之前的六级考试md不是忘了报名就是忘了缴费。</p>
+                <h1 id="总体分布的正态性检验">总体分布的正态性检验</h1>
+<h3 id="1jarque-bera检验jb检验">1.Jarque-Bera检验(JB检验)</h3>
+<p>它是利用正态分布的偏度sk和峰度ku，构造一个包含sk，ku且自由度为2的卡方分布统计量。这个检验适合大样本。<br>
+在MATLAB中，JB检验命令jbtest的调用格式为：<br>
+H = jbtest(X,alpha);<br>
+或<br>
+[H,P,JBSTAT,CV] = jbtest(X,alpha);<br>
+显著水平alpha缺省为0.05。<br>
+输出H为测试结果，若H=0，则不能拒绝X服从正态分布；若H=1，则可以否定X服从正态分布。<br>
+输出P为接受假设的概率值，P小于alpha，则可以拒绝是正态分布的原假设。<br>
+JBSTAT为测试统计量的值，CV为是否拒绝原假设的临界值，JBSTAT大于CV可以拒绝是正态分布的原假设。</p>
+<h3 id="2kolmogorov-smirnov检验ks检验">2.Kolmogorov-Smirnov检验(KS检验)</h3>
+<p>通过样本的经验分布函数与给定分布函数的比较，推断该样本是否来自给定分布函数的总体。当用于正态性检验时只能做标准正态检验，总体服从标准正态分布N(0,1)。<br>
+在MATLAB中，KS检验命令kstest的调用格式为：<br>
+h = kstest(x);<br>
+h = kstest(x,cdf);<br>
+[h,p,ksstat,cv] = kstest(x,cdf,alpha);<br>
+若h=0表明不能拒绝原假设，即不能拒绝服从正态分布；若h=1，则可以否定x服从正态分布。<br>
+显著水平alpha缺省为0.05。<br>
+cdf是一个两列矩阵，矩阵的第一列应包含x中的值，第二列是假设累积分布函数G(x)的值。</p>
+<h3 id="3lilliefors检验">3.Lilliefors检验</h3>
+<p>Lilliefors检验是改进KS检验并用于一般的正态性检验，原假设H0：总体服从正态分布N(μ，θ²），其中μ、θ²由样本均值和方差估计。<br>
+该检验的MATLAB命令lillietest的调用格式为：<br>
+H = lillietest(X,alpha);<br>
+或<br>
+[H,P,LSTAT,CV] = lillietest(X,alpha);<br>
+显著水平alpha在0.01和0.2之间，缺省为0.05。<br>
+输出P为接受假设的概率值，LSTAT为测试统计量的值，CV为是否拒绝原假设的临界值。<br>
+H为测试结果，若H=0，则不能拒绝X服从正态分布；若H=1，则可以否定X服从正态分布。<br>
+P小于alpha，则可以拒绝是正态分布的原假设。<br>
+LSTAT大于CV可以拒绝是正态分布的原假设。<br>
+————————————————<br>
+版权声明：本文为CSDN博主「热豆浆不加糖」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/weixin_47005624/article/details/105551033</p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E6%80%BB%E4%BD%93%E5%88%86%E5%B8%83%E7%9A%84%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C">总体分布的正态性检验</a><br>
+*
 <ul>
-<li><a href="#%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%80%83%E9%9B%85%E6%80%9D">我为什么要考雅思</a></li>
+<li><a href="#1jarque-bera%E6%A3%80%E9%AA%8Cjb%E6%A3%80%E9%AA%8C">1.Jarque-Bera检验(JB检验)</a></li>
+<li><a href="#2kolmogorov-smirnov%E6%A3%80%E9%AA%8Cks%E6%A3%80%E9%AA%8C">2.Kolmogorov-Smirnov检验(KS检验)</a></li>
+<li><a href="#3lilliefors%E6%A3%80%E9%AA%8C">3.Lilliefors检验</a></li>
 </ul>
 </li>
 </ul>
@@ -111,9 +148,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://hydrahs.github.io/post/zhe-shi-wo-de-di-yi-pian-wen-zhang/">
+            <a href="https://hydrahs.github.io/post/ya-si/">
               <h3 class="post-title">
-                这是我的第一篇文章
+                雅思二三事
               </h3>
             </a>
           </div>
