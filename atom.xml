@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hydrahs.github.io</id>
     <title>Wintermelon</title>
-    <updated>2021-03-26T12:54:14.209Z</updated>
+    <updated>2021-03-26T13:18:50.107Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hydrahs.github.io"/>
     <link rel="self" href="https://hydrahs.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://hydrahs.github.io/images/avatar.png</logo>
     <icon>https://hydrahs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Wintermelon</rights>
+    <entry>
+        <title type="html"><![CDATA[Ananalsation of Roket Trust]]></title>
+        <id>https://hydrahs.github.io/post/ananalsation-of-roket-trust/</id>
+        <link href="https://hydrahs.github.io/post/ananalsation-of-roket-trust/">
+        </link>
+        <updated>2021-03-26T13:07:20.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[几种分布的理解]]></title>
+        <id>https://hydrahs.github.io/post/ji-chong-fen-bu-de-li-jie/</id>
+        <link href="https://hydrahs.github.io/post/ji-chong-fen-bu-de-li-jie/">
+        </link>
+        <updated>2021-03-26T13:05:12.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[matlab中关于概率分布的验证函数]]></title>
         <id>https://hydrahs.github.io/post/guan-yu-gai-lu-fen-bu-de-yan-zheng/</id>
