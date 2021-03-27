@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ananalsation of Roket Trust | Wintermelon</title>
-<link rel="shortcut icon" href="https://hydrahs.github.io/favicon.ico?v=1616765173514">
+<link rel="shortcut icon" href="https://hydrahs.github.io/favicon.ico?v=1616850793280">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://hydrahs.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Ananalsation of Roket Trust | Wintermelon - Atom Feed" href="https://hydrahs.github.io/atom.xml">
@@ -11,8 +11,8 @@
 
 
 
-    <meta name="description" content="a
-" />
+    <meta name="description" content="对于固体火药发动机可靠性分析
+背景：对于某些特殊的地况，无法给无人机提供充分的起飞跑道。此种情况下的侦查作业受到影响，因此有了火药助推无人机升空的想法。（某参考文献）而固体火药存在点火延迟，推力有限的特点，从而不得不使用多发固体火药。火药间..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -22,7 +22,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://hydrahs.github.io">
-  <img class="avatar" src="https://hydrahs.github.io/images/avatar.png?v=1616765173514" alt="">
+  <img class="avatar" src="https://hydrahs.github.io/images/avatar.png?v=1616850793280" alt="">
   </a>
   <h1 class="site-title">
     Wintermelon
@@ -82,18 +82,56 @@
                 2021-03-26
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>a</p>
+                <p>对于固体火药发动机可靠性分析</p>
+<p>背景：对于某些特殊的地况，无法给无人机提供充分的起飞跑道。此种情况下的侦查作业受到影响，因此有了火药助推无人机升空的想法。（某参考文献）而固体火药存在点火延迟，推力有限的特点，从而不得不使用多发固体火药。火药间的总冲与最大推力存在一定的偏差，因此产生对于整个助推过程的可靠性分析需求。<br>
+选取了点火延迟、总冲、以及最大推力进行分析。对共计9枚火药做了推力测试曲线，测得了每一时刻下的推力大小。对于尾端火药的摆放位置进行了优化探讨。</p>
+<h3 id="点火延迟分布">点火延迟分布</h3>
+<img src="C:\Users\Dell\Documents\MATLAB\Rs\TRust.jpg" alt="TRust" style="zoom: 200%;" />
+<p>从图中可以看出大部分情况下，不存在有点火延时的情况，但这种情况是不能避免的。</p>
+<p>对测的延迟进行统计分析，检验满足指数分布。</p>
+<p>对其进行拟合可得： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0.04</mn></mrow><annotation encoding="application/x-tex">\mu = 0.04</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">μ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">4</span></span></span></span></p>
+<p>拟合如图：<img src="C:%5CUsers%5CDell%5CDocuments%5CMATLAB%5CRs%5CDp.jpg" alt="Dp" loading="lazy"></p>
+<h3 id="总冲分布">总冲分布</h3>
+<p>对每个单一的推力曲线进行差值拟合，对得到的拟合曲线进行积分。</p>
+<p>对积分值进行分析，满足正态分布。</p>
+<figure data-type="image" tabindex="1"><img src="C:%5CUsers%5CDell%5CDocuments%5CMATLAB%5CRs%5CDi.jpg" alt="Di" loading="lazy"></figure>
+<pre><code>mu = 4.3628
+sigma = 0.9719
+</code></pre>
+<h3 id="最大推力分布">最大推力分布</h3>
+<p>取每一推力曲线的最高点进行分布分析，可得最大推力满足正态分布<img src="C:%5CUsers%5CDell%5CDocuments%5CMATLAB%5CRs%5CDT.jpg" alt="DT" loading="lazy"></p>
+<pre><code>sigma = 0.4200
+mu = 10.6902
+</code></pre>
+<h3 id="平均燃烧时间分布">平均燃烧时间分布</h3>
+<p>从推力开始变化的点起算，得到总燃烧时间有助于对于平均推力的推导。</p>
+<p>其分布满足正态分布。如下：</p>
+<figure data-type="image" tabindex="2"><img src="C:%5CUsers%5CDell%5CDocuments%5CMATLAB%5CRs%5CDti.jpg" alt="Dti" loading="lazy"></figure>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%82%B9%E7%81%AB%E5%BB%B6%E8%BF%9F%E5%88%86%E5%B8%83">点火延迟分布</a></li>
+<li><a href="#%E6%80%BB%E5%86%B2%E5%88%86%E5%B8%83">总冲分布</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E6%8E%A8%E5%8A%9B%E5%88%86%E5%B8%83">最大推力分布</a></li>
+<li><a href="#%E5%B9%B3%E5%9D%87%E7%87%83%E7%83%A7%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83">平均燃烧时间分布</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
