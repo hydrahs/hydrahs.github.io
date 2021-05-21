@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hydrahs.github.io</id>
     <title>Wintermelon</title>
-    <updated>2021-04-17T02:09:56.618Z</updated>
+    <updated>2021-05-21T09:04:19.105Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hydrahs.github.io"/>
     <link rel="self" href="https://hydrahs.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://hydrahs.github.io/images/avatar.png</logo>
     <icon>https://hydrahs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Wintermelon</rights>
+    <entry>
+        <title type="html"><![CDATA[有关文献题录信息管理与引用的办法]]></title>
+        <id>https://hydrahs.github.io/post/you-guan-wen-xian-ti-lu-xin-xi-guan-li-yu-yin-yong-de-ban-fa/</id>
+        <link href="https://hydrahs.github.io/post/you-guan-wen-xian-ti-lu-xin-xi-guan-li-yu-yin-yong-de-ban-fa/">
+        </link>
+        <updated>2021-05-21T08:58:48.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[加速器评测]]></title>
         <id>https://hydrahs.github.io/post/jia-su-qi-ping-ce/</id>
